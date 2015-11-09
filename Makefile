@@ -5,4 +5,4 @@ all:
 .PHONY: run
 run:
 	$(info doing [$@])
-	@go run src/basic/hello_world.go
+	@/usr/lib/go/bin/go run src/basic/hello_world.go

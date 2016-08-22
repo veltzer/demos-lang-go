@@ -1,6 +1,11 @@
 .PHONY: all
-all:
+all: tools.stamp
 	$(info doing [$@])
+
+tools.stamp: apt.yaml
+	$(info doing [$@])
+	@templar_cmd install_deps
+	@make_helper touch-mkdir $@
 
 .PHONY: run
 run:

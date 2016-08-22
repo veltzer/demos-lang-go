@@ -1,6 +1,6 @@
 .PHONY: all
 all: tools.stamp
-	$(info doing [$@])
+	@true
 
 tools.stamp: apt.yaml
 	$(info doing [$@])

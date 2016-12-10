@@ -1,0 +1,2 @@
+Go main documentation:
+- https://golang.org/doc

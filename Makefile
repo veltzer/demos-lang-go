@@ -10,4 +10,9 @@ tools.stamp: templardefs/deps.py
 .PHONY: run
 run:
 	$(info doing [$@])
-	@/usr/lib/go/bin/go run src/basic/hello_world.go
+	@/usr/bin/go run src/basic/hello_world.go
+
+.PHONY: build
+build:
+	$(info doing [$@])
+	@/usr/bin/go build -o out/hello_world src/basic/hello_world.go

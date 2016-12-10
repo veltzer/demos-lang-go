@@ -3,3 +3,4 @@ tools.stamp
 __pycache__
 *.pyo
 *.pyc
+/out

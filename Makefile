@@ -9,9 +9,16 @@ tools.stamp: config/deps.py
 .PHONY: run
 run:
 	$(info doing [$@])
-	@/usr/bin/go run src/basic/hello_world.go
+	@go run src/basic/hello_world.go
 
 .PHONY: build
 build:
 	$(info doing [$@])
-	@/usr/bin/go build -o out/hello_world src/basic/hello_world.go
+	@go build -o out/hello_world src/basic/hello_world.go
+
+.PHONY: clean_hard
+clean_hard:
+	@git clean -qffxd
+.PHONY: clean
+clean:
+	@rm tools.stamp

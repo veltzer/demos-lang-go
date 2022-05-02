@@ -1,6 +1,6 @@
-# tools stamp
-tools.stamp
 __pycache__
 *.pyo
 *.pyc
 /out
+/.pydmt
+*.stamp

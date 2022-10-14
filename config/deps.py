@@ -1,4 +1,4 @@
 packages=[
-    'golang-go',
-    'golang-doc',
+    "golang-go",
+    "golang-doc",
 ]

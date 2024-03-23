@@ -555,8 +555,7 @@ Write a function `doubler` which takes a string argument and doubles it, i.e., "
 - note that '+' is the way to concatenate two strings
 - your function should not return anything, it should modify its argument directly
 - write a main program to test your function
-- once you've done that, make it so that `doubler` calls a second function, `doublerHelper` which actually does the doubling (to understand how to pass
-pointers around)
+- once you've done that, make it so that `doubler` calls a second function, `doublerHelper` which actually does the doubling (to understand how to pass pointers around)
 
 * Functions as Arguments
 
@@ -721,7 +720,7 @@ Write a function which implements the Collatz Conjecture:
 * Exercise: for Loop as Infinite Loop
 
 - write an infinite loop that reads a string using `fmt.Scanf` and then uses `strconv.Atoi` to convert it to an integer
-- if the conversion fails integer, print an error message and prompt the user again 
+- if the conversion fails to produce an integer, print an error message and prompt the user again 
 - since we don't yet know how to deal with errors returned from functions, just examine the int returned from `strconv.Atoi` and treat 0 as an error
 - stop the loop when the user complies, i.e., an integer is entered
 
@@ -770,7 +769,7 @@ Write a function which implements the Collatz Conjecture:
 .play -edit src/continuelabel.go
 
 * defer
-`defer` pushes a function call onto a list, and the saved calls are executed just prior to the surrounding function returning
+`defer` pushes a function call onto a stack, and the saved calls are executed just prior to the surrounding function returning
 
 commonly used to simplify functions with cleanup actions
 
@@ -957,7 +956,7 @@ while the identifier of the inner declaration is in scope, it denotes the entity
 
 * Exercise: Slices
 
-- there are two main ways to write a function that uses slices…either accept as slice as input and iterate through it, or have your function return a slice that it allocates from within the function
+- there are two main ways to write a function that uses slices…either accept a slice as input and iterate through it, or have your function return a slice that it allocates from within the function
 
 1. write a function `minmaxavg` which accepts a float64 slice and returns four values: the minimum value in the slice, the maximum value in the slice, the average of all the values, and an indication of success (as we did previously)
 
@@ -971,6 +970,9 @@ while the identifier of the inner declaration is in scope, it denotes the entity
 * Variadic Functions
 - can be called with any number of arguments
 - e.g., `fmt.Println` is a variadic function 
+
+3. write a function counter which accepts a slice of strings and returns a new slice of the strings which contains 3 or more e's
+- check out the `strings` package
 
 .play -edit src/variadic.go /START OMIT/,/END OMIT/
 
@@ -1104,16 +1106,16 @@ while the identifier of the inner declaration is in scope, it denotes the entity
 
 * Methods (cont'd)
 
-- here a method to compute the area of a triangle via Heron's formula...
+- here a method to compute the perimeter of a triangle...
 
-.code src/method1.go
+.code src/method2.go
 
 - notice that the function (or method) above has a different syntax
 - the above is a _method_, and the _method_ _receiver_ (the type that the method acts upon) appears in its own argument list between the `func` keyword and the method name
 
-- here's another one...
+- here's a method to compute the area of a triangle using Heron's formula...
 
-.code src/method2.go
+.code src/method1.go
 
 * Methods (cont'd)
 
@@ -1183,6 +1185,12 @@ while the identifier of the inner declaration is in scope, it denotes the entity
 - now we'll demonstrate the object of type Climb can invoke the `HowBig()` method
 
 .play -edit src/method6.go /START OMIT/,/END OMIT/
+
+* Exercise: Embedding
+- create a `Customer` type in your `Bank` package
+- add a `Customer` method such as `ChangeName`
+- embed a `Customer` inside a `BankAccount` object
+- demonstrate that you can change the customer's name via the BankAccount object
 
 * Overloading
 - suppose we want the _embedding_ type to _override_ a method in the _embedded_ type
@@ -1269,20 +1277,25 @@ here's a generic measure function which works on any geometry
 * Interface Values
 - under the hood, interface values can be thought of as a tuple of a value and a concrete type: (value, type)
 - an interface value holds a value of a specific underlying concrete type
-- calling a method on an interface value executes the method of the same name on its underlying type
 
+ type MyInterface interface {
+     Method()
+ }
+  
  type Text struct {
- 	String string
+     String string
  }
-
+ 
  func (t Text) Method() {
- 	fmt.Println(t.String)
+     fmt.Println(t.String)
  }
-
- type MyFloat float64
-
+ 
+ type MyFloat struct {
+     val float64
+ }
+ 
  func (f MyFloat) Method() {
- 	fmt.Println(f)
+     fmt.Println(f.val)
  }
 
 * Interface Values (cont'd)
@@ -1415,8 +1428,8 @@ here's a generic measure function which works on any geometry
 
 .play -edit src/error3.go /START OMIT/,/END OMIT/
 
-* Lab: Error Handling
-- modify your square root (or other) function from earlier to return a custom error as well as the existing return value
+* Exercise : Error Handling
+- modify your square root (or Withdraw) function from earlier to return a custom error as well as the existing return value
 - test it with a main program that sends a valid argument as well as an invalid argument
 - access the fields of the custom error programmatically using type assertion
 
@@ -1767,6 +1780,12 @@ add additional methods to the Stack module:
 - `Size`: returns number of elements on stack (could be used by IsEmpty)
 - add tests for each of these methods
 
+add tests to your `bank` package
+- try to Deposit/Withdraw a negative amount
+- try to Withdraw more than your balance
+- try to create a `bankAccount` with no name
+- anything else you can think of...
+
 * "Example" Tests
 - like unit tests, but instead of verifying results programmatically, it verifies output
 - the correct output lives in comments after the commands
@@ -2113,12 +2132,12 @@ the above comment is a complete sentence, beginning with the name of the element
 .link https://golang.org/doc/ Official Docs
 .link https://play.golang.org/ Playground
 .link https://tour.golang.org/welcome/1 Tour of Go
+.link https://blog.golang.org/migrating-to-go-modules Go Modules
 .link https://golang.org/doc/effective_go.html Effective Go
 .link https://talks.golang.org/2013/go4python.slide Go for Pythonistas
 .link https://blog.golang.org/concurrency-is-not-parallelism Concurrency is not Parallelism
 .link https://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html Less is Exponentially More
 .link https://awesome-go.com/ Go frameworks, libraries and software!
-.link https://github.com/golang/dep Go dependency management tool
 .link https://github.com/golang/go/wiki/SliceTricks Go Slice Tricks
 .link https://go.googlesource.com/proposal/+/master/design/go2draft-error-handling.md Go 2.0 Draft: Error Handling
 .link https://go.googlesource.com/proposal/+/master/design/go2draft-error-handling-overview.md Go 2.0 Error Handling — Problem Overview

@@ -1,4 +1,4 @@
-func foo int(bar int) {
+func foo(bar int) int {
     return_value := 0
 
     if ret1, err := do_something(bar); err {

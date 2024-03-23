@@ -5,6 +5,7 @@ import (
 	"math"
 )
 
+// START STUFF
 type MyInterface interface {
 	Method()
 }
@@ -24,6 +25,8 @@ type MyFloat struct {
 func (f MyFloat) Method() {
 	fmt.Println(f.val)
 }
+
+// END STUFF
 
 // START OMIT
 func describe(i MyInterface) {

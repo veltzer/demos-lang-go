@@ -14,9 +14,4 @@ func main() {
         fmt.Println("While loop iteration:", count)
         count++
     }
-
-    // Infinite loop
-    // for {
-    //     fmt.Println("This is an infinite loop!")
-    // }
 }

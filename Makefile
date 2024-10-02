@@ -1,10 +1,10 @@
 ##############
 # parameters #
 ##############
-# do you want dependency on the Makefile itself ?
-DO_ALLDEP:=1
 # do you want to show the commands executed ?
 DO_MKDBG?=0
+# do you want dependency on the Makefile itself ?
+DO_ALLDEP:=1
 # do you want to build elf files?
 DO_ELFS:=1
 
@@ -67,3 +67,10 @@ $(ELFS): %.elf: %.go
 	$(info doing [$@])
 	$(Q)go build -o $@ $<
 	$(Q)strip $@
+
+##########
+# alldep #
+##########
+ifeq ($(DO_ALLDEP),1)
+.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
+endif # DO_ALLDEP

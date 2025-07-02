@@ -23,15 +23,12 @@ func worker(id int, iterations int, wg *sync.WaitGroup) {
 func main() {
 	runtime.GOMAXPROCS(2)
 	var wg sync.WaitGroup
-	
 	// Start three workers with different workloads
 	wg.Add(3)
 	go worker(1, 10000000, &wg)   // 10 million iterations
 	go worker(2, 20000000, &wg)   // 20 million iterations
 	go worker(3, 30000000, &wg)   // 30 million iterations
-	
 	fmt.Println("Main: All workers started")
-	
 	// Wait for all goroutines to complete
 	wg.Wait()
 	fmt.Println("Main: All workers completed")

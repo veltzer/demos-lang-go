@@ -1,0 +1,3 @@
+## Number of examples
+
+Currently there are {{ git_count_files(pattern="src/**/*.go") }} examples in this repo.

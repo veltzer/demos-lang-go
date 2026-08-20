@@ -4,3 +4,15 @@
 # with load_lua (the pyanyzip pattern). The pydmt mako templates are gone.
 [processor.tera]
 src_dirs = ["tera.templates"]
+
+# The Makefile compiled each src/**/*.go into an executable with
+# `go build -o x.elf x.go` (all sources are package main). The generator drives
+# scripts/go_build.py, which runs the same build. (The Makefile's `go run`
+# rule was a manual run target, not part of the build.)
+[processor.generator.go]
+command = "scripts/go_build.py"
+src_dirs = ["src"]
+src_extensions = [".go"]
+output_dir = "out"
+output_extension = "elf"
+batch = false

@@ -32,8 +32,8 @@ src_dirs = ["src", "scripts", "config"]
 # ─── shell ───────────────────────────────────────────────────────────────────
 
 [processor.shellcheck]
-src_dirs = ["scripts", "src", "config"]
-args = ["--severity=error", "--shell=bash"]
+src_dirs = ["scripts", "src", "config", "slides", "standalone/multiapp"]
+src_files = ["run_source.sh"]
 
 # ─── lua ─────────────────────────────────────────────────────────────────────
 
@@ -60,3 +60,9 @@ batch = false
 # lint the GitHub Actions workflow files with actionlint
 [processor.actionlint]
 src_dirs = [".github/workflows"]
+
+# ─── markdown ────────────────────────────────────────────────────────────────
+
+[processor.rumdl]
+src_dirs = ["slides"]
+src_files = ["README.md"]

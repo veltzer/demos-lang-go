@@ -1,2 +1,2 @@
 #!/bin/sh
-go run $1
+go run "$1"

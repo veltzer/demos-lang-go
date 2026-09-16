@@ -47,7 +47,7 @@ src_dirs = ["config"]
 # ─── toml / yaml / json ──────────────────────────────────────────────────────
 
 [processor.taplo]
-src_files = [".rumdl.toml", "rsconstruct.toml"]
+src_files = [".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
 
 # The Makefile compiled each src/**/*.go into an executable with
 # `go build -o x.elf x.go` (all sources are package main). The generator drives

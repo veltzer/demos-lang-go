@@ -5,7 +5,7 @@
 
 description: Demos for the go language
 
-project website: https://veltzer.github.io/demos-lang-go
+project website: <https://veltzer.github.io/demos-lang-go>
 
 author: Mark Veltzer
 

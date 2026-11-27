@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"sync"
+	"time"
 )
 
 // First goroutine that generates data
@@ -20,7 +20,7 @@ func producer(ch chan int) {
 // Second goroutine that processes data without using range
 func consumer(ch chan int, wg *sync.WaitGroup) {
 	defer wg.Done() // Signal completion when function returns
-	
+
 	// Loop until the channel is closed
 	for {
 		num, ok := <-ch
@@ -37,14 +37,14 @@ func consumer(ch chan int, wg *sync.WaitGroup) {
 func main() {
 	dataChannel := make(chan int)
 	var wg sync.WaitGroup
-	
+
 	// Add 1 to the wait group for the consumer
 	wg.Add(1)
-	
+
 	// Launch both goroutines
 	go producer(dataChannel)
 	go consumer(dataChannel, &wg)
-	
+
 	// Wait for the consumer to finish
 	wg.Wait()
 	fmt.Println("Main: program complete")

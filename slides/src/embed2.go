@@ -7,7 +7,7 @@ type Mountain struct {
 	Elevation int
 }
 
-//START OMIT
+// START OMIT
 type Climb struct {
 	Mountain
 	Climber string

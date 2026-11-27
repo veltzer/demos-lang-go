@@ -1,3 +1,4 @@
+// vet: expect "expected 'package'" - a list of signatures, not a program OMIT
  func append(slice []Type, elems ...Type) []Type
  func cap(v Type) int {} // capacity of...
  func close(c chan<- Type) 

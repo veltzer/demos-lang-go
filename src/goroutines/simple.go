@@ -17,10 +17,10 @@ func main() {
 	go worker(1)
 	go worker(2)
 	go worker(3)
-	
+
 	// Print from main
 	fmt.Println("Main: All workers started")
-	
+
 	// Wait for all goroutines to complete
 	time.Sleep(400 * time.Millisecond)
 	fmt.Println("Main: Exiting")

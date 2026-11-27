@@ -1,3 +1,4 @@
+// vet: expect "expected 'package'" - a fragment shown on a slide OMIT
 func foo(bar int) int {
     return_value := 0
 

@@ -29,11 +29,11 @@ func consumer(ch chan int, done chan bool) {
 func main() {
 	dataChannel := make(chan int)
 	doneChannel := make(chan bool)
-	
+
 	// Launch both goroutines
 	go producer(dataChannel)
 	go consumer(dataChannel, doneChannel)
-	
+
 	// Wait for the consumer to finish
 	<-doneChannel
 	fmt.Println("Main: program complete")

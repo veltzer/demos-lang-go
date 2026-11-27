@@ -9,7 +9,7 @@ func main() {
 
 	fmt.Printf("n is %#v %d %d\n", n, len(n), cap(n))
 	if n == nil {
-		fmt.Println("n is nil!\n")
+		fmt.Println("n is nil!")
 	}
 
 	fmt.Printf("z is %#v %d %d\n", z, len(z), cap(z))

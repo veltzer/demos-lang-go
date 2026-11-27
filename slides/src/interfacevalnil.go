@@ -21,14 +21,15 @@ func (t *Text) Method() {
 func describe(i MyInterface) {
 	fmt.Printf("(%v, %T)\n", i, i)
 }
+
 // END OMIT
 
 // START2 OMIT
 func main() {
 	var i MyInterface
 	var t *Text // HL
-	
-	i = t // HL
+
+	i = t       // HL
 	describe(i) // HL
 	i.Method()
 
@@ -36,4 +37,5 @@ func main() {
 	describe(i)
 	i.Method()
 }
+
 // END2 OMIT

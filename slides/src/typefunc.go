@@ -1,3 +1,4 @@
+// vet: expect "cannot use x" - teaching: the type error is the lesson OMIT
 package main
 
 // START OMIT

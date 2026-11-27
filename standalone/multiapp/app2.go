@@ -1,9 +1,9 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    fmt.Println("This is App2")
+	fmt.Println("This is App2")
 }

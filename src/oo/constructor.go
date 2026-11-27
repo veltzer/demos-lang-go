@@ -36,11 +36,11 @@ func (d *Dog) GetAge() int {
 func main() {
 	// Create a dog using the constructor
 	myDog := NewDog("Rex", "German Shepherd", 3)
-	
+
 	// Use the dog methods
 	fmt.Printf("My dog's name is %s and he is %d years old\n", myDog.GetName(), myDog.GetAge())
 	myDog.Bark()
-	
+
 	// Create another dog
 	otherDog := NewDog("Buddy", "Golden Retriever", 2)
 	otherDog.Bark()

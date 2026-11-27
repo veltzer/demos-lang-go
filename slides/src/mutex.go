@@ -1,3 +1,4 @@
+// vet: expect "expected 'package'" - a fragment shown on a slide OMIT
 import "sync/atomic" // also "math/rand" and "time"
 
 func read_state() {

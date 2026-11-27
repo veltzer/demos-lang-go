@@ -15,7 +15,7 @@ func setup() {
 }
 
 func main() {
-    var copyofdone bool
+	var copyofdone bool
 	go setup()
 	for {
 		mutex.Lock()
@@ -29,4 +29,3 @@ func main() {
 	println(a)
 	mutex.Unlock()
 }
-

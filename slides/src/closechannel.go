@@ -4,7 +4,7 @@ import "fmt"
 import "time"
 
 func main() {
-// START OMIT
+	// START OMIT
 	jobs := make(chan int, 5) // holds work to be done
 	done := make(chan bool)
 
@@ -29,5 +29,5 @@ func main() {
 	fmt.Println("sent all jobs")
 
 	<-done // await worker // HL
-// END OMIT
+	// END OMIT
 }

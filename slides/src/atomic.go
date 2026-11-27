@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"math/rand"
 	"sync"
-	"time"
 	"sync/atomic"
+	"time"
 )
 
 var sharedint uint64
@@ -14,7 +14,7 @@ var wg sync.WaitGroup
 
 func readwrite(n int) {
 	defer wg.Done()
-	iterations := rand.Int() % 1000 + 1000
+	iterations := rand.Int()%1000 + 1000
 	atomic.AddUint64(&sharedcount, uint64(iterations))
 	//fmt.Printf("goroutine %d running for %d iterations\n", n, iterations)
 
@@ -34,4 +34,3 @@ func main() {
 	fmt.Println("value of shared int =", sharedint)
 	fmt.Println("value of shared count =", sharedcount)
 }
-

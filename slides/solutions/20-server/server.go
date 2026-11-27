@@ -1,10 +1,10 @@
 // Concurrency Exercise:
-// - create a program which uses a goroutine to simulate a database server
-// - your "database server" should simply be a goroutine which accepts
-//   an integer representing some "work" to do and it sleeps for that
-//   amount of time before accepting more work
-// - your main routine should get integers from the user, and pass those to
-//   the "server"
+//   - create a program which uses a goroutine to simulate a database server
+//   - your "database server" should simply be a goroutine which accepts
+//     an integer representing some "work" to do and it sleeps for that
+//     amount of time before accepting more work
+//   - your main routine should get integers from the user, and pass those to
+//     the "server"
 package main
 
 import (

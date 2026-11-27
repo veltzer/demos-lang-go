@@ -16,8 +16,9 @@ func fibonacci(n int, c chan int) {
 func main() {
 	c := make(chan int, 10) // buffered channel, 10 slots
 	go fibonacci(cap(c), c) // run fibonacci up to capacity of channel // HL
-	for i := range c { // HL
+	for i := range c {      // HL
 		fmt.Println(i)
 	} // HL
 }
+
 // END OMIT

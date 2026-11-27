@@ -1,13 +1,13 @@
-// - still more...how about a load balancer goroutine which spins up new
-//   server routines as needed up to some maximum (i.e., if it sees that
-//   no servers are available, it spins up more
-// - to do this effectively you'll likely need reflection, so let's
-//   simplify by just trying to send to each server, and if they are
-//   all busy, launch a new goroutine
-// - you'll likely need an array/slice of channels
-// - make it so each server goroutine shuts down if it hasn't done work
-//   for a while, so even if you hit your max of, say 10, servers, they
-//   should start shutting down as the workload decreases
+//   - still more...how about a load balancer goroutine which spins up new
+//     server routines as needed up to some maximum (i.e., if it sees that
+//     no servers are available, it spins up more
+//   - to do this effectively you'll likely need reflection, so let's
+//     simplify by just trying to send to each server, and if they are
+//     all busy, launch a new goroutine
+//   - you'll likely need an array/slice of channels
+//   - make it so each server goroutine shuts down if it hasn't done work
+//     for a while, so even if you hit your max of, say 10, servers, they
+//     should start shutting down as the workload decreases
 //
 // This solution does not use a load balance goroutine (that's left as
 // an exercise for you), but it does shut down inactive servers and it
@@ -15,8 +15,8 @@
 package main
 
 import (
-	"chanlist" // package I wrote to manage of channels
 	"fmt"
+	"server2/chanlist" // package I wrote to manage of channels
 	"strconv"
 	"time"
 )

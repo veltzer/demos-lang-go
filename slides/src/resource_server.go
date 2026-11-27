@@ -1,3 +1,4 @@
+// vet: expect "terraform-plugin-sdk" - needs the Terraform plugin SDK, which this repository does not vendor OMIT
 package main
 
 // START OMIT

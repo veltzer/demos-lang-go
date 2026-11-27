@@ -1,3 +1,4 @@
+// vet: expect "expected 'package'" - a fragment shown on a slide OMIT
 // compute area of triangle using Heron's formula
 func (t triangle) area() int { // HL
     s := (t.side1 + t.side2 + t.side3) / 2

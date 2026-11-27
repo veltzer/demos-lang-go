@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 import "time"
@@ -15,8 +16,8 @@ func (e MyError) Error() string { // HL
 
 func run() error {
 	return MyError{
-		time.Now(), 
-		"it didn't work", }
+		time.Now(),
+		"it didn't work"}
 }
 
 func main() {
@@ -24,4 +25,5 @@ func main() {
 		fmt.Println(err)
 	}
 }
+
 // END OMIT

@@ -3,28 +3,29 @@ package main
 import "fmt"
 
 type MyInterface interface {
-    Method()
+	Method()
 }
 
 type Text struct {
-    String string
+	String string
 }
 
 func describe(i MyInterface) {
-    fmt.Printf("(%v, %T)\n", i, i)
+	fmt.Printf("(%v, %T)\n", i, i)
 }
 
 // START OMIT
 func (t *Text) Method() {
-    if t == nil {
-        fmt.Println("<nil>")
-    } else {
-        fmt.Println(t.String)
-    }
+	if t == nil {
+		fmt.Println("<nil>")
+	} else {
+		fmt.Println(t.String)
+	}
 }
 
 func main() {
-    var inter MyInterface
-    inter.Method()
+	var inter MyInterface
+	inter.Method()
 }
+
 // END OMIT

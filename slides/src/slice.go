@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-//START OMIT
+// START OMIT
 func main() {
 	// create a slice of strings of size 3
 	s := make([]string, 3) // HL

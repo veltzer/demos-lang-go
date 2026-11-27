@@ -37,7 +37,7 @@ func main() {
 	// Create instances
 	dog := Dog{Name: "Rex"}
 	cat := Cat{Name: "Whiskers"}
-	
+
 	// Use the interface
 	fmt.Println("Making animals speak:")
 	MakeSpeakTwice(dog)

@@ -38,6 +38,16 @@ src_dirs = ["config"]
 [processor.checker.taplo]
 src_files = [".ruff.toml", ".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
 
+# Every Go file is formatted as gofmt formats it and passes go vet, with
+# the files of its package where it has any. A slide listing that is not
+# meant to build says which failure it has, and is held to exactly that one
+# (see scripts/go_check.py).
+[processor.checker.script.go]
+command = "scripts/go_check.py"
+required_tools = ["go", "gofmt"]
+src_dirs = ["slides", "src", "standalone"]
+src_extensions = [".go"]
+
 # The Makefile compiled each src/**/*.go into an executable with
 # `go build -o x.elf x.go` (all sources are package main). The generator drives
 # scripts/go_build.py, which runs the same build. (The Makefile's `go run`

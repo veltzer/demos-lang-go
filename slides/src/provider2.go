@@ -1,3 +1,4 @@
+// vet: expect "undefined: schema" - the import is on the slide before OMIT
 package main
 
 import "fmt"

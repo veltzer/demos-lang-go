@@ -1,3 +1,4 @@
+// vet: expect "expected 'package'" - a fragment shown on a slide OMIT
 func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
         return resourceServerRead(d, m)
 }

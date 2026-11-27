@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	sum := 0
 	for num := 1; num <= 100; num++ {
-		if num % 5 == 0 {
+		if num%5 == 0 {
 			continue // HL
 		}
 		sum += num

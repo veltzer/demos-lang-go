@@ -7,7 +7,7 @@
 //
 // repeating the above makes the guess better and better
 //
-// use a starting guess of 1.0, regardless of the input 
+// use a starting guess of 1.0, regardless of the input
 //
 // repeat the calculation 10 times and print each guess along the way
 
@@ -21,7 +21,7 @@ func sqrt(num float64) float64 {
 
 	for count := 1; count <= 10; count++ {
 		prevguess = currguess
-		currguess = prevguess - (prevguess * prevguess - num) / (2 * prevguess)
+		currguess = prevguess - (prevguess*prevguess-num)/(2*prevguess)
 		fmt.Println("Guess =", currguess)
 	}
 	return currguess

@@ -1,3 +1,4 @@
+// vet: expect "undefined: Create" - tests the sized stack of a later exercise, which is not in this directory OMIT
 package stack
 
 import "testing"

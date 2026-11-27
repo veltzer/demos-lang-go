@@ -1,3 +1,4 @@
+// vet: expect "expected operand" - the dots stand for code left out OMIT
 package main
 
 import "math/rand" // HL

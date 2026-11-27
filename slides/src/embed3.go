@@ -12,7 +12,7 @@ type Climb struct {
 	Climber string
 }
 
-//START OMIT
+// START OMIT
 func (m Mountain) HowBig() string { // HL
 	if m.Elevation > 8800 {
 		return "HUGE"

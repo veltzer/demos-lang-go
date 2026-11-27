@@ -28,5 +28,5 @@ func main() {
 	fmt.Println("Relay race about to begin...")
 	baton <- 1 // starter gun!
 	<-done     // wait for last runner
-	fmt.Printn("Race over!")
+	fmt.Println("Race over!")
 }

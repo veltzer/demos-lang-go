@@ -17,15 +17,15 @@ func sendMessages(ch chan string, id int) {
 func main() {
 	// Create a channel
 	messages := make(chan string)
-	
+
 	// Start a goroutine with the separate function
 	go sendMessages(messages, 1)
-	
+
 	// Receive all ten messages from the channel
 	for i := 1; i <= 10; i++ {
 		msg := <-messages
 		fmt.Println(msg)
 	}
-	
+
 	fmt.Println("All messages received!")
 }
